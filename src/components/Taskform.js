@@ -3,11 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { GlobalContext } from "../context/Globalcontext";
 
 const Taskform = () => {
-  
-  const {addTask, tasks, updateTask} = useContext(GlobalContext);
+  const { addTask, tasks, updateTask } = useContext(GlobalContext);
 
   const [task, setTask] = useState({
-    id:"",
+    id: "",
     title: "",
     description: "",
   });
@@ -33,22 +32,18 @@ const Taskform = () => {
   useEffect(() => {
     const taskFound = tasks.find((t) => t.id === params.id);
 
-
     if (taskFound) {
-
       setTask(taskFound);
-      
     } else {
-      
     }
   }, [params.id]);
 
   return (
     <div className="flex justify-center items-center h-3/4">
       <form onSubmit={handleSubmit} className="bg-gray-900 p-10">
-        <h2 className="text-3xl mb-7">{
-          task.id ? 'Editing the task' : 'Creando una tarea'
-        }</h2>
+        <h2 className="text-3xl mb-7">
+          {task.id ? "Editing the task" : "Creando una tarea"}
+        </h2>
         <div className="mb-5">
           <input
             type="text"
@@ -70,7 +65,7 @@ const Taskform = () => {
             className="py-3 px-4 focus:outline-none focus:text-gray-100 bg-gray-700 w-full"
           ></textarea>
           <button className="bg-green-600 w-full hover:bg-green-500 py-2 px-4 mt-5">
-            {task.id ? 'Edit' : 'Create'}
+            {task.id ? "Edit" : "Create"}
           </button>
         </div>
       </form>

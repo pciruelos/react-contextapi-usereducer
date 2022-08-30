@@ -3,7 +3,7 @@ import { GlobalContext } from "../context/Globalcontext";
 import { Link } from "react-router-dom";
 
 const Tasklist = () => {
-  const { tasks, deleteTask, toggleTaskDone } = useContext(GlobalContext);
+  const { tasks, deleteTask, toggleTaskDone  } = useContext(GlobalContext);
 
   return (
     <div className="flex justify-center">
